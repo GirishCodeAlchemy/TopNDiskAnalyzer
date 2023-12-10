@@ -4,7 +4,7 @@ Analyze and display the top files and folders in the specified directory.
 
 ## Description
 
-TopNFileAnalyzer is a concurrent file analysis tool written in Go. This tool provides insights into the top files and folders within a specified directory , allowing users to customize the number of top results. Leveraging goroutines and channels, it efficiently processes files concurrently, providing a scalable solution for analyzing file systems.
+TopNDiskAnalyzer is a concurrent file analysis tool written in Go. This tool provides insights into the top files and folders within a specified directory, allowing users to customize the number of top results. Leveraging goroutines and channels, it efficiently processes files concurrently, providing a scalable solution for analyzing file systems.
 
 ## Features
 
