@@ -85,6 +85,19 @@ tdf -dir /path/to/directory -top 15
 tdf /path/to/directory
 
 ```
+## Screenshots
+
+### 1. Help command
+![Help command](https://github.com/GirishCodeAlchemy/TopNDiskAnalyzer/assets/143807663/3ef807c0-126c-46b3-b78e-49acbe79aed2)
+
+### 2. Relative path
+![Relative path](https://github.com/GirishCodeAlchemy/TopNDiskAnalyzer/assets/143807663/9bc6dad7-2096-45a9-8785-877a62eb26c8)
+
+### 3. Absolute path 
+![Absolute path](https://github.com/GirishCodeAlchemy/TopNDiskAnalyzer/assets/143807663/ec5bc374-6f79-409f-a39c-1b19f3d0f1f7)
+
+### 4. Top option
+![Top option](https://github.com/GirishCodeAlchemy/TopNDiskAnalyzer/assets/143807663/5f666489-f853-48d6-9858-3d20189f2819)
 
 ## Contributing
 
