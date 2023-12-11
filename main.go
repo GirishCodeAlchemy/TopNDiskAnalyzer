@@ -38,13 +38,31 @@ func main() {
 	flag.IntVar(&topN, "top", 10, "Number of top items to display")
 	flag.BoolVar(&showHelp, "help", false, "Show help message")
 	flag.Parse()
+
+	for _, arg := range flag.Args() {
+		if arg == "--top" {
+			continue
+		}
+		if n, err := strconv.Atoi(arg); err == nil {
+			topN = n
+		} else if arg == "--help" {
+			showHelp = true
+			break
+		} else {
+			if dirPath == "" {
+				dirPath = arg
+			}
+		}
+	}
+
+	// Use default directory if dirPath is still empty
+	if dirPath == "" {
+		dirPath, _ = os.Getwd()
+	}
+
 	if showHelp {
 		printHelp()
 		return
-	}
-
-	if flag.NArg() > 0 {
-		dirPath = flag.Arg(0)
 	}
 
 	files, err := os.ReadDir(dirPath)
