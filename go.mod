@@ -1,3 +1,3 @@
 module github.com/GirishCodeAlchemy/TopNDiskAnalyzer
 
-go 1.23
+go 1.21.0
