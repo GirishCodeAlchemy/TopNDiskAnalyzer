@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://github.com/GirishCodeAlchemy/TopNDiskAnalyzer/assets/143807663/0e55e1e0-e15f-4a9d-af1a-e7d67eab5250" width="300" alt="Top N Disk Analyzer">  
 </p>
-<h2 align="center">Analyze and display the top files and folders in the specified directory. 🚀</h2>
+<h2 align="center">🚀 Analyze and display the top files and folders in the specified directory. 🚀</h2>
 
 ## Description
 
