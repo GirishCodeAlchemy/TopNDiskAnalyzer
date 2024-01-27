@@ -34,7 +34,7 @@ func main() {
 	var topN int
 	var showHelp bool
 
-	flag.StringVar(&dirPath, "dir", ".", "Directory path")
+	flag.StringVar(&dirPath, "dir", "", "Directory path")
 	flag.IntVar(&topN, "top", 10, "Number of top items to display")
 	flag.BoolVar(&showHelp, "help", false, "Show help message")
 	flag.Parse()
