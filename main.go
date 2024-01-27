@@ -149,7 +149,6 @@ func processFileOrFolder(basePath string, entry fs.DirEntry, wg *sync.WaitGroup,
 func processFolder(folderPath string, foldersCh chan fileInfo, filesCh chan fileInfo, wg *sync.WaitGroup, topN int) {
 	defer wg.Done()
 	var folderSize int64
-	var topFiles []fileInfo
 
 	err := filepath.WalkDir(folderPath, func(path string, entry fs.DirEntry, err error) error {
 		if err != nil {
@@ -162,7 +161,6 @@ func processFolder(folderPath string, foldersCh chan fileInfo, filesCh chan file
 		}
 		if !entry.IsDir() {
 			filesCh <- fileInfo{Name: path, Size: info.Size(), IsDir: false}
-			topFiles = append(topFiles, fileInfo{Name: path, Size: info.Size(), IsDir: false})
 		}
 
 		folderSize += info.Size()
@@ -173,12 +171,7 @@ func processFolder(folderPath string, foldersCh chan fileInfo, filesCh chan file
 		fmt.Printf("Error processing folder %s: %v\n", folderPath, err)
 		return
 	}
-	sort.Slice(topFiles, func(i, j int) bool { return topFiles[i].Size > topFiles[j].Size })
 	foldersCh <- fileInfo{Name: folderPath, Size: folderSize, IsDir: true}
-
-	for i := 0; i < len(topFiles) && i < topN; i++ {
-		filesCh <- topFiles[i]
-	}
 }
 
 func printTopN(files []fileInfo, topN int, printKey string) {
